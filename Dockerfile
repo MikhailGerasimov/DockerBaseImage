@@ -6,7 +6,7 @@ RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config
 RUN sed -i 's/#StrictModes yes/StrictModes no/g' /etc/ssh/sshd_config
-RUN passwd -d
+RUN passwd -d root
 RUN service ssh restart
 
 RUN mkdir /root/.vs-debugger && chmod 0755 /root/.vs-debugger
