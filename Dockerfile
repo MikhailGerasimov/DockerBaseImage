@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y install openssh-server unzip && apt-get install
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd 
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -i 's/#StrictModes yes/StrictModes no/g' /etc/ssh/sshd_config
-RUN  echo -e "dev\ndev\n" |passwd root
+RUN echo 'root:dev' | chpasswd
 
 
 RUN mkdir /root/.vs-debugger && chmod 0755 /root/.vs-debugger
