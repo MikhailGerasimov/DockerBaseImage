@@ -17,6 +17,6 @@ RUN curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v "latest" -l /root/.
 
 EXPOSE 22  
 
-ENTRYPOINT service ssh restart && bash
+ENTRYPOINT ["service", "ssh", "restart"]
 
-CMD service ssh status
+CMD ["service", "ssh", "status"]
